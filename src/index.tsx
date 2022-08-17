@@ -5,7 +5,7 @@ import './index.scss'
 
 ReactDom.render((
   <div>
-    <p>Hello,This is pages!</p>
+    <p>Hello,This is pages changed</p>
     <img src={Logo} alt="" />
   </div>
 ), document.getElementById('root'))

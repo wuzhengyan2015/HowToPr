@@ -5,7 +5,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.tsx'),
   output: {
-    filename: 'main.js',
+    filename: 'main.[chunkhash:8].js',
     path: path.resolve(__dirname, '../dist'),
   },
   resolve: {
@@ -58,7 +58,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // filename: 'assets/[name].css',
+      filename: 'assets/[name].css',
     }),
     new htmlWebpackPlugin({
       filename: 'index.html',
