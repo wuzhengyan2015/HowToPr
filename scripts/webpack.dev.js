@@ -11,7 +11,8 @@ const devConfig = {
     hot: true,
     compress: true,
     port: 3001,
-    open: true
+    open: true,
+    historyApiFallback: true
   },
 };
 
