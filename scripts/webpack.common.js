@@ -27,7 +27,15 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                exportLocalsConvention: "camelCase",
+              }
+            }
+          },
           'postcss-loader',
           {
             loader: 'resolve-url-loader',
@@ -42,6 +50,7 @@ module.exports = {
             },
           },
         ],
+        exclude: '/node_modules/'
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/,
