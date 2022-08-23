@@ -31,7 +31,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
                 exportLocalsConvention: "camelCase",
               }
             }
@@ -49,8 +49,17 @@ module.exports = {
               sourceMap: true
             },
           },
-        ],
-        exclude: '/node_modules/'
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'postcss-loader',
+        ]
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/,

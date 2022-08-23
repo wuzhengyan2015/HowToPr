@@ -1,0 +1,14 @@
+@import "../../assets/styles/common.scss";
+
+.header {
+  background: #fff;
+}
+
+.container {
+  @include layout
+}
+
+.logo {
+  width: 36px;
+  height: auto;
+}
