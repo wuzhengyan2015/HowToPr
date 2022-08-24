@@ -5,10 +5,28 @@
 }
 
 .container {
-  @include layout
+  display: flex;
+  align-items: center;
+  @include layout;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-  width: 36px;
+  width: 40px;
   height: auto;
+}
+
+.logoText {
+  margin-left: 12px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu {
+  font-size: 18px;
 }
