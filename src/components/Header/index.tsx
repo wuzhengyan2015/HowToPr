@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import type { MenuProps } from 'antd'
 import logo from '@/assets/images/logo.png'
 import styles from './index.scss'
 
-const { Header: AHeader } = Layout
+const { Header: AntdHeader } = Layout
 
 export default function Header() {
+  const [current, setCurrent] = useState('home')
+  const navigate = useNavigate()
+
   const items: MenuProps['items'] = [
-    { key: 'home', label: '首页' },
+    { key: '', label: '首页' },
     { key: 'course', label: '课程' },
     { key: 'material', label: '素材' },
   ]
+
+  const onClick: MenuProps['onClick'] = e => {
+    setCurrent(e.key)
+    navigate(`/${e.key}`)
+  }
+
   return (
-    <AHeader className={styles.header}>
+    <AntdHeader className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logoWrapper}>
           <img src={logo} className={styles.logo} />
@@ -23,9 +33,10 @@ export default function Header() {
           className={styles.menu}
           mode="horizontal"
           items={items}
-          selectedKeys={['home']}
+          selectedKeys={[current]}
+          onClick={onClick}
         />
       </div>
-    </AHeader>
+    </AntdHeader>
   )
 }

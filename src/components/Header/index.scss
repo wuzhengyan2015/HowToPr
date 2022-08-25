@@ -2,31 +2,54 @@
 
 .header {
   background: #fff;
+
+  .container {
+    display: flex;
+    align-items: center;
+    @include layout;
+  }
+  
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: auto;
+  }
+  
+  .logoText {
+    margin-left: 12px;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .menu {
+    margin-left: 32px;
+    font-size: 18px;
+    color: #0B093B;
+
+    :global {
+      .ant-menu-item-active {
+        color: #7620FF;
+      }
+      .ant-menu-item-selected {
+        color: #7620FF;
+      }
+      .ant-menu-item:hover {
+        color: #7620FF;
+      }
+      .ant-menu-item-active:after {
+        border-color: #7620FF;
+      }
+      .ant-menu-item-selected:after {
+        border-color: #7620FF;
+      }
+      .ant-menu-item:hover:after {
+        border-color: #7620FF;
+      }
+    }
+  }
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  @include layout;
-}
-
-.logoWrapper {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 40px;
-  height: auto;
-}
-
-.logoText {
-  margin-left: 12px;
-  margin-bottom: 0;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.menu {
-  font-size: 18px;
-}
